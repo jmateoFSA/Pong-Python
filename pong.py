@@ -85,3 +85,13 @@ while True:
   if ball.xcor() < -390:
     ball.goto(0, 0)
     ball.dx *= -1
+
+  # paddle able to bounce ball
+
+  if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < player_one.ycor() + 40 and ball.ycor() > player_one.ycor() - 40):
+    ball.setx(-340)
+    ball.dx *= -1
+
+  if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < player_two.ycor() + 40 and ball.ycor() > player_two.ycor() - 40):
+    ball.setx(340)
+    ball.dx *= -1
